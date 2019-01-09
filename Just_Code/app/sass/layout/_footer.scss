@@ -1,0 +1,165 @@
+.footer {
+	background: $light-gray;
+	color: #6e7279;
+ 	text-align: center;
+	
+	@include media ('>=tablet') {
+		text-align: left;
+	}
+	
+	address {
+		margin-bottom: 24px;
+	}
+
+	.inner-content {
+		p {
+			margin-bottom: 0;
+			
+			a {
+				padding-left: 5px;
+			}
+		}
+	}
+
+	input {
+		@include animate(border-color background);
+		@include placeholder {
+			color: #6e7279;
+		}
+
+		outline-color: transparent;
+		
+		&:not([type="submit"]) {
+			height: 36px;
+			padding: 3px 13px;
+			border: 1px solid #6e7279;
+			background-color: transparent;
+			width: 100%;
+			margin-bottom: 14px;
+			
+			&:focus {
+				border: 1px solid rgba($dark-yellow, .7);
+			}
+		}
+		
+		&[type="submit"] {
+			width: 100%;
+			background: $dark-yellow;
+			text-transform: uppercase;
+			color: $white;
+			padding: 10px 14px;
+			border: none;
+			
+			&:hover {
+				background: darken($dark-yellow, 10%);
+			}
+		}
+	}
+
+	h4 {
+		color: $dark-yellow;
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-bottom: 15px;
+		
+		@include media ('>=tablet') {
+			margin-bottom: 23px;
+		}
+	}
+
+	.top-footer {
+		padding: 45px 15px;
+		
+		@include media ('>=tablet') {
+			padding: 76px 0 50px;
+		}
+	}
+	
+	.bottom-footer {
+		padding: 13px 0;
+		background: $gray;
+		font-size: 12px;
+		
+		@include media ('>=tablet') {
+			font-size: 14px;
+		}
+
+		.container {
+			@include media ('>=tablet') {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			@include media ('>=widescreen') {
+				padding: 0 63px 0 40px;
+			}
+		}
+
+		p {
+			@include media ('>=tablet') {
+				margin-bottom: 0;
+			}
+		}
+
+		i {
+			font-size: 16px;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: #6e7279;
+		
+		&:hover {
+			color: $dark-yellow;
+		}
+	}
+
+	.col-wrap {
+		margin: 0 -15px;
+		
+		@include media ('>=tablet') {
+			display: flex;	
+			flex-wrap: wrap;
+		}
+
+		@include media ('>=widescreen') {
+			padding: 0 38px;
+		}
+
+		.col {
+			padding: 0 15px 15px;
+			
+			@include media ('>=tablet') {
+				width: 33.33%;
+				padding-bottom: 0;
+			}
+
+			&:first-child {
+				@include media ('>=widescreen') {
+					padding: 0 85px 0 0;
+				}
+			}
+
+			&:nth-child(2) {
+				@include media ('>=widescreen') {
+					padding: 0 0 0 84px;
+				}
+			}
+
+			&:last-child {
+				@include media ('>=widescreen') {
+					padding: 0 15px 0 60px;
+				}
+			}
+
+			p {
+				@include media ('>=widescreen') {
+					line-height: 1.7;
+				}
+			}
+		}
+	}	
+}

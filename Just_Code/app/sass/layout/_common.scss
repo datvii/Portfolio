@@ -1,0 +1,396 @@
+body {
+	&.nav-active {
+		overflow-y: hidden;
+		height: 100vh;
+	}
+}
+
+a {
+	@include animate(color);
+}
+
+address {
+	font-style: normal;
+}
+
+h1 {
+	font-weight: bold;
+	font-family: $base-font-serif;
+	
+	@include media ('>=tablet') {
+		font-size: 41px;
+	}
+}
+
+h2 {
+	font-weight: 600;
+	font-family: $base-font-serif;
+	color: $gray;
+
+	&.title {
+		position: relative;
+		text-transform: uppercase;
+		margin-bottom: 33px;
+		display: inline-block;
+		vertical-align: middle;
+		
+		@include media ('>=tablet') {
+			margin-bottom: 55px;
+		}
+		
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			width: 75px;
+			height: 2px;
+			background: $dark-yellow;
+			bottom: -15px;
+			
+			@include media ('>=tablet') {
+				bottom: -26px;
+			}
+		}
+	}
+}
+
+h4 {
+	font-weight: 600;
+}
+
+#wrapper {
+	position: relative;
+	overflow: hidden;
+}
+
+.container {
+	max-width: 1230px;
+	padding: 0 15px;
+	margin: 0 auto;
+	
+	&.container-xl {
+		max-width: 1410px;
+	}
+}
+
+.btn {
+	@include animate(background color);
+	
+	text-transform: uppercase;
+	color: #6e7279;
+	min-width: 160px;
+	padding: 15px;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 1.7em/1.7em;
+	background: $dark-yellow;
+	
+	&.btn-outline {
+		background-color: transparent;
+		border: 1px solid #6e7279;
+		
+		&:hover {
+			background: #6e7279;
+			color: $white;
+		}
+	}
+}
+
+.intro {
+	background: url(../img/intro-bg.jpg) no-repeat 50% 50%/cover;
+	position: relative;
+	color: $white;
+	
+	@include media ('>=tablet','retina2x') {
+		background: url(../img/intro-bg-2x.jpg) no-repeat 50% 50%/cover;
+	}
+	
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background: rgba($gray, .96);
+	}
+
+	.inner-content {
+		padding: 50px 0 75px; 
+		position: relative;
+		z-index: 9;
+		
+		@include media ('>=tablet') {
+			padding: 76px 0 132px;
+		}
+	}
+
+	h1 {
+		color: $white;
+		text-transform: uppercase;
+	}
+}
+
+.management {
+	padding: 80px 0 30px;
+	text-align: center;
+	
+	@include media ('>=tablet') {
+		padding: 146px 0 29px;
+	}
+
+	.col-wrap {
+		margin-bottom: 10px;
+
+		@include media ('>=phone') {
+			margin: 0 -10px 10px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		@include media ('>=tablet') {
+			margin: 0 -15px 10px;
+		}
+		
+		.col {
+			padding-bottom: 20px;
+			
+			@include media ('>=phone') {
+				width: 50%;
+				padding: 0 15px 30px;
+			}
+			
+			@include media ('>=tablet') {
+				width: 33.33%;
+				padding: 0 50px 30px;
+			}
+		}
+	}
+
+	.img-box {
+		margin-bottom: 24px;
+		padding-top: 100%;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: cover;
+	}
+
+	.inner-content {
+		text-align: left;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		
+		@include media ('>=tablet') {
+			padding: 0 8px;
+		}
+		
+		.inner-text {
+			padding-right: 10px;
+		}
+		
+		strong {
+			text-transform: uppercase;
+			color: #232323;
+			display: block;
+			margin-bottom: 4px;
+			font: 600 16px/1.2em $base-font-serif;
+		}
+
+		.post {
+			color: $dark-yellow;
+			text-transform: capitalize;
+			display: block;
+		}
+	}
+}
+
+.reviews {
+	padding: 60px 0 30px;
+	background: #f7f7f7;
+	text-align: center;
+	position: relative;
+	
+	@include media ('>=tablet') {
+		padding: 85px 0 60px;
+	}
+
+	@include media ('>=widescreen') {
+		padding: 114px 0 75px;
+	}
+
+	.slick {
+		.inner-content {
+			max-width: 901px;
+			padding: 0 20px;
+			margin: 0 auto;
+			
+			@include media ('>=tablet') {
+				line-height: 1.6;
+			}
+		}
+	}
+
+	h2 {
+		&.title {
+			@include media ('>=widescreen') {
+				margin-bottom: 90px;
+			}
+
+			&:after {
+				background: $gray;
+			}
+		}
+	}
+
+	.img-box {
+		@include size(90px);
+		
+		border-radius: 50%;
+		overflow: hidden;
+		margin: 0 auto 20px;
+		
+		@include media ('>=tablet') {
+			margin-bottom: 35px;
+		}
+	}
+
+	.slick-arrow {
+		@include size(30px);
+		
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%); 
+		background-color: transparent;
+		border: none;
+		outline-color: transparent;
+		z-index: 99999;
+		
+		&:hover {
+			&:after {
+				color: $dark-yellow;
+			}
+		}
+		
+		&:after {
+			@include animate(color);
+
+			font-family: 'icomoon' !important;
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			position: absolute;
+			font-size: 30px;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			color: $gray;
+		}
+		
+		&.slick-prev {
+			left: -13px;
+			
+			@include media ('>=tablet') {
+				left: 0;
+			}
+
+			@include media ('>=widescreen') {
+				left: 26px;
+			}
+
+			&:after {
+				content: '\e901';
+			}
+		}
+		
+		&.slick-next { 
+			right: -13px;
+			
+			@include media ('>=tablet') {
+				right: 0;
+			}
+
+			@include media ('>=widescreen') {
+				right: 29px;
+			}
+
+			&:after {
+				content: '\e900';
+			}
+		}
+	}
+
+	p {
+		@include media ('>=tablet') {
+			margin-bottom: 34px;
+		}
+	}
+
+	.author {
+		font-weight: 500;
+		color: $dark-yellow;
+		text-transform: uppercase;
+		display: block;
+		margin-bottom: 6px;
+		font-size: 16px;
+	}
+
+	.post {
+		text-transform: capitalize;
+		color: $gray;
+		font-weight: 600;
+	}
+}
+
+.social {
+	@extend %listreset;
+	
+	margin: 0 -3px;
+	
+	li {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 3px;
+		
+		&:hover {
+			a {
+				color: $dark-yellow;
+				border-color: $dark-yellow;
+			}
+		}
+		
+		a {
+			@include size(31px);
+			@include animate(color border-color);
+			
+			border-radius: 50%;
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $white;
+			background: #dedede;
+		}
+	}
+
+	&.foo-social {
+		li {
+			margin: 3px 5px;
+		}
+
+		a {
+			border: 1px solid #6e7279;
+			background-color: transparent;
+			color: #6e7279;
+		}
+		
+	}
+}
